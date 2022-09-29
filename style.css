@@ -16,13 +16,78 @@ body {
   /* overflow: hidden
   allows us to put a border radius on the div
   - overflow decides what happens when a child is bigger
-  than the parent [the image is bigger than the the div so we ] */
+  than the parent [the image is bigger than the the div so we 
+  want to hide any overflowing content] */
   overflow: hidden;
   border-radius: 18px;
+
+  /* we animate the box-shadow when the card is hovered / focused */
+  transition: box-shadow 650ms ease-in-out;
+  transition: transform 650ms ease-in-out;
+}
+
+#song-card:hover,
+#song-card:focus {
+  /* box-shadow 
+  - the overflow: hidden property is crucial because
+  this way the box shadow will be uniformly visible around 
+  the corners*/
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
 }
 
 #song-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#sont-card-overlay {
+  /* we already set the #sont-card to position: relative
+    we can use it as an anchor point */
+  position: absolute;
+
+  /* we cover the parent completely */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* gradient that starts from the bottom 
+  and becomes completely transparent at 50%*/
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
+#song-card-info {
+  /* we do NOT want top because we want the section
+to be directly attached to the bottom */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* we move the text to the center */
+  text-align: center;
+
+  color: white;
+
+  padding-bottom: 0.1rem;
+}
+
+#song-card-info-artist {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#song-card-info-album {
+  font-size: 0.9rem;
+}
+
+#song-card-info-track {
+  font-size: 1.9rem;
+  margin-top: 0.25rem;
 }
