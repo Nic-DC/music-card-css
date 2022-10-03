@@ -82,7 +82,7 @@ to be directly attached to the bottom */
 
   padding: 0.1rem 1.5rem;
 
-  transition: transform 350ms ease-in-out;
+  transition: transform 550ms ease-in-out;
   transform: translateX(0%);
 }
 
@@ -115,7 +115,9 @@ to be directly attached to the bottom */
   left: 30px;
   border-radius: 50%;
 
-  transition: transform 350ms ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+
+  transition: transform 550ms ease-in-out;
   transform: translateX(-200%);
 }
 
@@ -124,7 +126,7 @@ to be directly attached to the bottom */
   height: 0;
   border-style: solid;
   border-width: 10px 0 10px 17.3px;
-  border-color: transparent transparent transparent #eeeeee;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
 
   position: absolute;
   bottom: 15px;
